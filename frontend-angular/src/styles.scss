@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+
+html { @include mat.theme((color: mat.$azure-palette, typography: Inter, density: 0)); }
+html, body { height: 100%; }
+body { margin: 0; font-family: Inter, Roboto, Arial, sans-serif; background: #f5f7fb; color: #172033; }
+* { box-sizing: border-box; }
+.page { padding: 24px; }
+.page-header { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 20px; }
+.page-title { margin: 0; font-size: 28px; font-weight: 700; }
+.page-subtitle { margin: 6px 0 0; color: #65758b; }
+.grid { display: grid; gap: 16px; }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.full-width { width: 100%; }
+.table-card { overflow: auto; }
+.form-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.actions { display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
+.status-chip { border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700; background: #e8f2ff; color: #075fba; }
+@media (max-width: 1100px) { .grid-4, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .page { padding: 16px; } .page-header { align-items: stretch; flex-direction: column; } .grid-4, .grid-3, .grid-2, .form-grid { grid-template-columns: 1fr; } }
